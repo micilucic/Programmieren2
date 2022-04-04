@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayListDemo {
     public static void main(String[] args) {
@@ -34,5 +35,12 @@ public class ArrayListDemo {
         for (Osterhase oh : mauritius) {
             System.out.println(oh);
         }
+        System.out.println("----------");
+
+        Iterator<Osterhase> iter = mauritius.iterator();
+        while (iter.hasNext()){
+            System.out.println(iter.next());
+        }
+        System.out.println("----------");
     }
 }
