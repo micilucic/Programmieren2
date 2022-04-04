@@ -49,7 +49,7 @@ public class Osterhase {
     //Um ein Objekt mit allen Attributen als String auszugeben ! (public String to String () )
     public String toString() {
         return  name + " versteckt " + anzahlVersteckteEier +
-                " Eier " + " als traditioneller Vorgang in Bezug auf seine Religion " + HasenReligion.EXTRA_BUNTE_OSTEREIER + ".";
+                " Eier als traditioneller Vorgang in Bezug auf seine Religion " + HasenReligion.EXTRA_BUNTE_OSTEREIER + ".";
     }
 
     public Osterhase (String name) {

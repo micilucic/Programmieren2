@@ -9,7 +9,7 @@ public class Account {
     private String bic;
     private double balance;
     private int accountID;
-    private static int uniqueID;
+    private static int uniqueID = 1;
 
     public int getAccountID() {
         return accountID;
@@ -22,6 +22,18 @@ public class Account {
         this.bic = bic;
         this.balance = 0.0;
         accountID = uniqueID++;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "owner='" + owner + '\'' +
+                ", iban='" + iban + '\'' +
+                ", bic='" + bic + '\'' +
+                ", balance=" + balance +
+                ", accountID=" + accountID +
+                ", kontoStand=" + kontoStand +
+                '}';
     }
 
     // Account konto = new Account("Milica Lucic", "AT57 6599 3425", "AUWDTA");
