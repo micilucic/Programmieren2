@@ -4,8 +4,13 @@ import com.sun.security.jgss.InquireSecContextPermission;
 
 public class Osterhase {
 
+    private static int haeschenZaehler = 1; //man kann darauf nicht zugreifen (durch Osterhase.haeschenZaehler), weil es private ist!
+
+
     private String name;
     private int anzahlVersteckteEier;
+    private int haeschenNummer;
+    private HasenReligion personlicherGlaube;
 
 
     public String getName() {
@@ -27,14 +32,32 @@ public class Osterhase {
         return anzahlVersteckteEier;
     }
 
-    public Osterhase (String name, int anzahlVersteckteEier) {
+    public Osterhase (String name, int anzahlVersteckteEier, HasenReligion glaube) {
         this.name = name;
         this.anzahlVersteckteEier = anzahlVersteckteEier;
 
+        // haeschenNummer = 12; //jeder Osterhase soll eigene Nummer wegen der Steuer haben
+        haeschenNummer = haeschenZaehler++;
+
     }
+
+    public int getHaeschenNummer() {
+        return haeschenNummer;
+    }
+
+    @Override
+    //Um ein Objekt mit allen Attributen als String auszugeben ! (public String to String () )
+    public String toString() {
+        return  name + " versteckt " + anzahlVersteckteEier +
+                " Eier " + " als traditioneller Vorgang in Bezug auf seine Religion " + HasenReligion.EXTRA_BUNTE_OSTEREIER + ".";
+    }
+
     public Osterhase (String name) {
         this.name = name;
         this.anzahlVersteckteEier = 0;
+        haeschenNummer = haeschenZaehler++;
+        personlicherGlaube = HasenReligion.LANGE_OHREN_ZEUGEN;
+
     }
 }
 

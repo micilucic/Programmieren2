@@ -8,8 +8,12 @@ public class Account {
     private String iban;
     private String bic;
     private double balance;
+    private int accountID;
+    private static int uniqueID;
 
-
+    public int getAccountID() {
+        return accountID;
+    }
 
     public Account(String owner, String iban, String bic) {
 
@@ -17,6 +21,7 @@ public class Account {
         this.iban = iban;
         this.bic = bic;
         this.balance = 0.0;
+        accountID = uniqueID++;
     }
 
     // Account konto = new Account("Milica Lucic", "AT57 6599 3425", "AUWDTA");
