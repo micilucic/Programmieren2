@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Employee {
 
     private int empNumber;
@@ -47,5 +49,19 @@ public class Employee {
                 ", salary=" + salary +
                 ", department='" + department + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return empNumber == employee.empNumber && Objects.equals(department, employee.department);
+    }
+
+    @Override
+    //hash funktion nimmt Daten und generiert auf deren Basis eine Zahl, die möglich eindeutig ist
+    public int hashCode() {
+        return Objects.hash(empNumber, department);
     }
 }
